@@ -36,10 +36,11 @@ if [ "${LAST_KNOWN_COMMIT}" != "${LATEST_COMMIT}" ]; then
 
     set -x
     # Update commit file
+    git checkout master
     rm ${COMMIT_FILENAME}
     echo "${LATEST_COMMIT}" > ${COMMIT_FILENAME}
     git add ${COMMIT_FILENAME}
-    git commit -m "Travus: Update latest commit"
+    git commit -m "Travis: Update latest commit"
     set +x
     git remote set-url origin https://${GH_TOKEN}@github.com/Simpetus/trigger-nightly-builds.git > /dev/null 2>&1
     git push origin master
