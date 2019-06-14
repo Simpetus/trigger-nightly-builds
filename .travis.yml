@@ -8,6 +8,6 @@ env:
     secure: H51ACkskKA/YoVTwIJiFYtm02IwK7RSwRBQUej9+kQ+HKeerDIKUk19n9wumYDLI908E479yI3dgg0USXYDfaOY5h7CyRGzDBIdnjROOgaSvdqRmBQDzBSa49RbIS9AYczb5uQ4jv+1gzTT9gc9H22sFQJUwsdOS8lpV4Akt5RH7XfpIfQV3hyWt5KPWbijhKlprrih5kbwexEvuoVY6785VOnFuN+ufq+8czAdZaTzSn1AFC6uFpM2gOy2clHEN+reBXHmKV8o82v+sD96nkUUa1AyhvGdQ3SV1NKSPHd7L6IIuTq2y3GuzAnIqm32xSAV4SUEXmKdL7ezlZ2lFsvD0h55zOMKYb8ReSypYCDh90nw4wLs6XiT42tp9zrUJYS+3e9Y5z5LPCco5gnhB04dLU5KNs+PbNyooUuiRBUpSTvcZ4iJQn/itC18FhyaWHFByJZM8VQdp52lCGI02Pc0T4uzoh2qmkQmf69udRtEJaZQVMbCn0FiPToHdnMVesMe0g9UYnKiYsOhGd2g9bGzE/nXoSkEMkQiJeyFhMqjAw7ky7Nn26D6+a36tujQCnKIehtL9E8Y+9whSh07aVmVwIHCaVNkYKbIt6JQv/biEDn7sU6goyxfSR1d+igngJfDJpRnmW8RNh8MF6kHZ+TehMke47GHyeG4hospHKTE=
 
 script:
-  - trigger_nightly_builds.sh libctl
-  - trigger_nightly_builds.sh mpb
-  - trigger_nightly_builds.sh pymeep
+  - ./trigger_nightly_builds.sh libctl
+  - ./trigger_nightly_builds.sh mpb
+  - ./trigger_nightly_builds.sh pymeep
