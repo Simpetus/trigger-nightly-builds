@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -e
+set -x
 
 PROJECT="$1"
 
@@ -22,17 +23,20 @@ if [ "${LAST_KNOWN_COMMIT}" != "${LATEST_COMMIT}" ]; then
     sed -r -i 's/(.*set buildnumber = )([0-9]+)(.*)/echo "\1$((\2+1))\3"/ge' recipe/meta.yaml
     git add recipe/meta.yaml
     git commit -m "Travis: Update build number"
+    set +x
     git remote set-url origin https://${GH_TOKEN}@github.com/Simpetus/${REPO_NAME}.git > /dev/null 2>&1
     git push origin master
     popd
 
     echo "Updated build number"
 
+    set -x
     # Update commit file
-    rm ${COMMIT_PATH}
-    echo "${LATEST_COMMIT}" > ${COMMIT_PATH}
-    git add ${COMMIT_PATH}
+    rm ${COMMIT_FILENAME}
+    echo "${LATEST_COMMIT}" > ${COMMIT_FILENAME}
+    git add ${COMMIT_FILENAME}
     git commit -m "Travus: Update latest commit"
+    set +x
     git remote set-url origin https://${GH_TOKEN}@github.com/Simpetus/trigger-nightly-builds.git > /dev/null 2>&1
     git push origin master
 
