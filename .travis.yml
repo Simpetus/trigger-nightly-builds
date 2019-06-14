@@ -10,4 +10,4 @@ env:
 script:
   - ./trigger_nightly_builds.sh libctl
   - ./trigger_nightly_builds.sh mpb
-  - ./trigger_nightly_builds.sh pymeep
+  - ./trigger_nightly_builds.sh meep
