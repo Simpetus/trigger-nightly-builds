@@ -14,7 +14,7 @@ LAST_KNOWN_COMMIT=$(head -n 1 ${COMMIT_FILENAME})
 LATEST_COMMIT=$(git ls-remote git://github.com/NanoComp/${PROJECT}.git refs/heads/master | cut -f 1)
 
 if [ "${LAST_KNOWN_COMMIT}" != "${LATEST_COMMIT}" ]; then
-    # Bumb the recipe buildnumber, which will trigger a rebuild on travis,
+    # Bump the recipe buildnumber, which will trigger a rebuild on travis,
     # which will publish a new conda package
     if [ "${PROJECT}" = "meep" ]; then
         REPO_NAME="pymeep-nightly-recipe"
