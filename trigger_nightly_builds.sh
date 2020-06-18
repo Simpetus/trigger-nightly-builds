@@ -36,6 +36,7 @@ if [ "${LAST_KNOWN_COMMIT}" != "${LATEST_COMMIT}" ]; then
 
     set -x
     # Update commit file
+    git fetch
     git checkout master
     rm ${COMMIT_FILENAME}
     echo "${LATEST_COMMIT}" > ${COMMIT_FILENAME}
